@@ -119,10 +119,10 @@
         minutesCircle.style.strokeDashoffset = initialOffset - minutes*(initialOffset/60);
         hoursCircle.style.strokeDashoffset = initialOffset - hours*(initialOffset/24);
 
-        total--;
         if (total <= 0) {
           clearInterval(timeinterval);
         }
+        total--;
       }
 
       updateClock();

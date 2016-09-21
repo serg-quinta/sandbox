@@ -16,7 +16,6 @@
       display: flex;
     }
     .timer-item-wrapper {
-      background-color: #ddd;
       padding: 10px;
       width: 280px;
     }
@@ -47,16 +46,16 @@
       position: absolute;
       top: 0;
       left: 0;
-      transition: all 1s linear;
     }
   </style>
 </head>
 <body>
-  <div class="timer-container">
+  <input type="hidden" name="timer-total" id="timer-total" value="86400">
+  <div class="timer-container" id="timer">
     <div class="timer-item-wrapper">
       <div class="timer-item">
         <div class="time">
-          <span class="time-value" id="hours-value">24</span>
+          <span class="time-value hours-value">24</span>
           <span class="time-label">hours</span>
         </div>
         <svg class="timer-circle" viewBox="0 0 260 260">
@@ -68,7 +67,7 @@
     <div class="timer-item-wrapper">
       <div class="timer-item">
         <div class="time">
-          <span class="time-value" id="min-value">00</span>
+          <span class="time-value min-value">00</span>
           <span class="time-label">minutes</span>
         </div>
         <svg class="timer-circle" viewBox="0 0 260 260">
@@ -80,7 +79,7 @@
     <div class="timer-item-wrapper">
       <div class="timer-item">
         <div class="time">
-          <span class="time-value" id="sec-value">00</span>
+          <span class="time-value sec-value">00</span>
           <span class="time-label">seconds</span>
         </div>
         <svg class="timer-circle" viewBox="0 0 260 260">
@@ -91,29 +90,41 @@
     </div>
   </div>
   <script>
-    (function() {
-      'use strict';
-      var time = 60, /* how long the timer runs for */
-          initialOffset = '735',
-          i = 59,
-          secCircle = document.getElementById('sec-circle'),
-          secValue = document.getElementById("sec-value");
-      var secInterval = setInterval(function() {
-          secCircle.style.strokeDashoffset = initialOffset - i*(initialOffset/time);
-          if (i > 9) {
-            secValue.innerHTML = i;
-          }
-          else {
-            secValue.innerHTML = "0" +i;
-          }
-          if (i == 0) {
-              i = 60;
-          }
-          i--;
-          console.log(secCircle.style.strokeDashoffset);
-          console.log(i);
-      }, 1000);
-    }());
+    function initializeClock(id) {
+      var clock = document.getElementById(id);
+      var secondsSpan = clock.querySelector('.sec-value');
+      var minutesSpan = clock.querySelector('.min-value');
+      var hoursSpan = clock.querySelector('.hours-value');
+      var initialOffset = 735;
+      var secondsCircle = document.getElementById('sec-circle');
+      var minutesCircle = document.getElementById('min-circle');
+      var hoursCircle = document.getElementById('hours-circle');
+      var total = document.getElementById('timer-total').value;
+
+      function updateClock() {
+        var seconds = Math.floor(total % 60);
+        var minutes = Math.floor((total / 60) % 60);
+        var hours = Math.floor((total / (60 * 60)) % 24);
+
+        secondsSpan.innerHTML = ('0' + seconds).slice(-2);
+        minutesSpan.innerHTML = ('0' + minutes).slice(-2);
+        hoursSpan.innerHTML = ('0' + hours).slice(-2);
+
+        secondsCircle.style.strokeDashoffset = initialOffset - seconds*(initialOffset/60);
+        minutesCircle.style.strokeDashoffset = initialOffset - minutes*(initialOffset/60);
+        hoursCircle.style.strokeDashoffset = initialOffset - hours*(initialOffset/24);
+
+        total--;
+        if (total <= 0) {
+          clearInterval(timeinterval);
+        }
+      }
+
+      updateClock();
+      var timeinterval = setInterval(updateClock, 1000);
+    }
+    initializeClock('timer');
+
   </script>
 </body>
 </html>

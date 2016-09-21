@@ -6,47 +6,51 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SVG</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-    }
-    .timer-container {
-      display: flex;
-    }
-    .timer-item-wrapper {
-      padding: 10px;
-      width: 280px;
-    }
-    .timer-item {
-      position: relative;
-      padding-bottom: 100%;
-    }
-    .time {
-      font-family: sans-serif;
-      position: absolute;
-      top: calc(50% - 25px);
-      left: 0;
-      width: 100%;
-      text-align: center;
-      z-index: 1;
-    }
-    .time-value {
-      color: #333;
-      display: block;
-      font-size: 2em;
-      line-height: 1;
-    }
-    .time-label {
-      color: #939598;
-    }
-    .timer-circle {
-      transform: rotate(-90deg);
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  .timer-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .timer-item-wrapper {
+    padding: 10px;
+    width: 280px;
+  }
+  .timer-item {
+    position: relative;
+    padding-bottom: 100%;
+  }
+  .time {
+    font-family: sans-serif;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+  }
+  .time-value {
+    color: #333;
+    display: block;
+    font-size: 2em;
+    line-height: 1;
+  }
+  .time-label {
+    color: #939598;
+  }
+  .timer-circle {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   </style>
 </head>
 <body>

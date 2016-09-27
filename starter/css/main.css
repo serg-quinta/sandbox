@@ -221,59 +221,6 @@ img {
   display: inline-block;
   vertical-align: middle;
 }
-.table-grid {
-  border-collapse: separate;
-  border-spacing: 2px;
-  width: 100%;
-}
-.table-grid th {
-  background-color: #2199e8;
-  border-bottom: 7px solid #fff;
-  color: #fff;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 20px;
-  padding: 7px 5px;
-  text-transform: uppercase;
-}
-.table-grid td {
-  font-size: 13px;
-  line-height: 15px;
-  padding: 10px 5px;
-  text-align: center;
-}
-.table-grid tr:nth-child(odd) td {
-  background-color: #e6e6e6;
-}
-.table-scroll {
-  overflow-x: auto;
-}
-@media (max-width: 767px) {
-  .responsive-table thead {
-    display: none;
-  }
-  .responsive-table tr {
-    display: block;
-  }
-  .responsive-table td {
-    display: block;
-    font-size: 16px;
-    line-height: 1.25;
-    padding: 5px 15px;
-    text-align: left;
-  }
-  .responsive-table td:first-child {
-    padding-top: 15px;
-  }
-  .responsive-table td:last-child {
-    padding-bottom: 15px;
-  }
-  .responsive-table td:before {
-    content: attr(data-th) ": ";
-    font-weight: 700;
-    margin-right: 10px;
-  }
-}
 .page-main {
   width: 1200px;
   padding: 0 20px;
@@ -511,6 +458,59 @@ kbd {
   background-color: #e6e6e6;
   color: #000;
   font-family: Consolas, 'Liberation Mono', Courier, monospace;
+}
+.table-grid {
+  border-collapse: separate;
+  border-spacing: 2px;
+  width: 100%;
+}
+.table-grid th {
+  background-color: #2199e8;
+  border-bottom: 7px solid #fff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  padding: 7px 5px;
+  text-transform: uppercase;
+}
+.table-grid td {
+  font-size: 13px;
+  line-height: 15px;
+  padding: 10px 5px;
+  text-align: center;
+}
+.table-grid tr:nth-child(odd) td {
+  background-color: #e6e6e6;
+}
+.table-scroll {
+  overflow-x: auto;
+}
+@media (max-width: 767px) {
+  .responsive-table thead {
+    display: none;
+  }
+  .responsive-table tr {
+    display: block;
+  }
+  .responsive-table td {
+    display: block;
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 5px 15px;
+    text-align: left;
+  }
+  .responsive-table td:first-child {
+    padding-top: 15px;
+  }
+  .responsive-table td:last-child {
+    padding-bottom: 15px;
+  }
+  .responsive-table td:before {
+    content: attr(data-th) ": ";
+    font-weight: 700;
+    margin-right: 10px;
+  }
 }
 label {
   color: #2199e8;

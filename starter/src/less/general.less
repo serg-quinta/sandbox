@@ -1,39 +1,45 @@
-* {
+html {
+  font-size: @global-font-size;
   box-sizing: border-box;
 }
-body {
-  background-color: #fff;
-  color: @text;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-  font-size: 1rem;
-  line-height: 1.25;
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
+
+// Default body styles
+body {
+  padding: 0;
+  margin: 0;
+  font-family: @sans-serif-fonts;
+  line-height: @global-lineheight;
+  color: @global-font-color;
+  background: @body-background;
+}
+
 img {
+  // Grid defaults to get images and embeds to work properly
   max-width: 100%;
   height: auto;
+  -ms-interpolation-mode: bicubic;
+
+  // Get rid of gap under images by making them display: inline-block; by default
+  display: inline-block;
+  vertical-align: middle;
 }
-a {
-  color: @brand-secondary;
-  transition: color 0.3s;
-  &:hover,
-  &:focus {
-    color: @brand-primary;
-  }
-  h1 &,
-  h2 &,
-  h3 & {
-    text-decoration: none;
-  }
-  // &:visited {
-  //   color: @link-visited;
-  // }
-}
+
+
+
+
 .table-grid {
   border-collapse: separate;
   border-spacing: 2px;
   width: 100%;
   & th {
-    background-color: @brand-primary;
+    background-color: @primary-color;
     border-bottom: 7px solid #fff;
     color: #fff;
     font-size: 14px;
@@ -49,10 +55,7 @@ a {
     text-align: center;
   }
   & tr:nth-child(odd) td {
-    background-color: @gray;
-  }
-  & a:visited {
-    color: @link-visited;
+    background-color: @light-gray;
   }
 }
 .table-scroll {

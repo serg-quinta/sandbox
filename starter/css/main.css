@@ -348,7 +348,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: #000;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: inherit;
   text-rendering: optimizeLegibility;

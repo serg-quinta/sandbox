@@ -1,0 +1,31 @@
+.page-wrapper {
+  max-width: 1000px;
+  margin: auto;
+}
+.gallery {
+  padding: 2px;
+}
+.gallery__mainImage {
+  border: 1px solid #ccc;
+  display: block;
+  padding: 5px;
+}
+.gallery__thumbsList {
+  display: flex;
+  padding: 0;
+  margin: 2px -2px;
+  list-style: none;
+}
+.gallery__thumb {
+  margin: 2px;
+}
+.gallery__thumbLink:hover .gallery__thumbImage,
+.gallery__thumbLink:focus .gallery__thumbImage {
+  background-color: #ccc;
+}
+.gallery__thumbImage {
+  border: 1px solid #ccc;
+  display: block;
+  padding: 5px;
+  transition: all .3s;
+}

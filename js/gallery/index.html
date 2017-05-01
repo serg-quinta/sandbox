@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="../../../starter/css/main.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <div class="page page--full">
+    <div class="page-header">
+      <div class="page-section">Gallery -- Serhiy Valchuk Github Pages</div>
+    </div>
+    <div class="page-main page-main--full">
+      <div class="page-section">
+        <h1>Gallery</h1>
+        <p>Code is written on ES6 standard. Only <a href="http://caniuse.com/#search=es6">modern browsers</a> support it.</p>
+        <div class="gallery">
+          <img class="gallery__mainImage" data-gallery-main src="https://js.cx/gallery/img1-lg.jpg" alt="Large image">
+          <ul class="gallery__thumbsList">
+            <li class="gallery__thumb">
+              <a class="gallery__thumbLink" data-gallery-thumb href="https://js.cx/gallery/img2-lg.jpg" title="Image 2">
+                <img class="gallery__thumbImage" src="https://js.cx/gallery/img2-thumb.jpg" alt="Image 2"></a>
+            </li>
+            <li class="gallery__thumb">
+              <a class="gallery__thumbLink" data-gallery-thumb href="https://js.cx/gallery/img3-lg.jpg" title="Image 3">
+                <img class="gallery__thumbImage" src="https://js.cx/gallery/img3-thumb.jpg" alt="Image 3"></a>
+            </li>
+            <li class="gallery__thumb">
+              <a class="gallery__thumbLink" data-gallery-thumb href="https://js.cx/gallery/img4-lg.jpg" title="Image 4">
+                <img class="gallery__thumbImage" data-thumb src="https://js.cx/gallery/img4-thumb.jpg" alt="Image 4"></a>
+            </li>
+            <li class="gallery__thumb">
+              <a class="gallery__thumbLink" data-gallery-thumb href="https://js.cx/gallery/img5-lg.jpg" title="Image 5">
+                <img class="gallery__thumbImage" src="https://js.cx/gallery/img5-thumb.jpg" alt="Image 5"></a>
+            </li>
+            <li class="gallery__thumb">
+              <a class="gallery__thumbLink" data-gallery-thumb href="https://js.cx/gallery/img6-lg.jpg" title="Image 6">
+                <img class="gallery__thumbImage" src="https://js.cx/gallery/img6-thumb.jpg" alt="Image 6"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div class="page-section">© svalchuk</div>
+    </div>
+  </div>
+  <script>
+    /* globals Gallery */
+    'use strict';
+    let gallery = new Gallery('.gallery');
+  </script>
+</body>
+
+</html>

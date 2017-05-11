@@ -1,3 +1,6 @@
+body {
+  margin: 20px;
+}
 .slider {
   background: linear-gradient(to right, #eee, #aaa);
   border-radius: 5px;
@@ -5,13 +8,17 @@
   height: 15px;
   margin: 5px;
 }
-.thumb {
+.slider__thumb {
   background: #00f;
   cursor: pointer;
   width: 10px;
   height: 25px;
   border-radius: 3px;
   position: relative;
-  left: 10px;
+  left: 0;
   top: -5px;
+  /*transition: left .2s;*/
+}
+.sleder__footer {
+  margin-top: 20px;
 }
